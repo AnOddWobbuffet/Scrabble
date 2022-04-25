@@ -1,0 +1,37 @@
+<body>
+    <div *ngIf="communication.mode === 'classique'" id="text-game">
+        <span>C</span>
+        <span>L</span>
+        <span>A</span>
+        <span>S</span>
+        <span>S</span>
+        <span>I</span>
+        <span>Q</span>
+        <span>U</span>
+        <span>E</span>
+    </div>
+    <div *ngIf="communication.mode === 'LOG2990'" id="text-game">
+        <span>L</span>
+        <span>O</span>
+        <span>G</span>
+        <span>2</span>
+        <span>9</span>
+        <span>9</span>
+        <span>0</span>
+    </div>
+    <div class="container">
+        <div class="text"><p>Vous pouvez commencer une partie en solo</p></div>
+        <div class="buttonContainer"><button class="button" (click)="onCreate('solo')">Partie en solo</button></div>
+        <div class="text"><p>ou commencer une partie multijoueur en ligne</p></div>
+        <div class="buttonContainer">
+            <button class="button" id="host" (click)="onCreate('multijoueur')">Créer une partie</button>
+        </div>
+        <div class="buttonContainer"><button class="button" id="join" (click)="onJoin()">Joindre une partie</button></div>
+        <div id="return">
+            <button id="returnButton" (click)="onBack()">
+                <img id="returnIcon" src="assets/img/backGray.png" />
+                <img id="returnIcon" src="assets/img/backGreen.png" />
+            </button>
+        </div>
+    </div>
+</body>

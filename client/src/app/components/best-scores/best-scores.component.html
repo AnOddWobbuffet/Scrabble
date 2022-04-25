@@ -1,0 +1,57 @@
+<div class="custom-dialog-container">
+    <div id="head">
+        <div id="headText">Scores</div>
+        <div class="divider"></div>
+        <button id="headButton" (click)="onClose()"><img /><img id="headButtonIcon" src="assets/img/x.png" /></button>
+    </div>
+    <body>
+        <div class="separator"></div>
+        <div class="tabset">
+            <input type="radio" name="tabset" id="tab1" aria-controls="Classique" checked />
+            <label for="tab1">Classique</label>
+            <input type="radio" name="tabset" id="tab2" aria-controls="LOG2990" />
+            <label for="tab2">LOG2990</label>
+
+            <div class="tab-panels">
+                <section id="Classique" class="tab-panel">
+                    <h1>Scores Classique</h1>
+                    <table class="tableContent">
+                        <thead>
+                            <tr class="header">
+                                <th class="cell">Points</th>
+                                <th class="cell">Nom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row" *ngFor="let score of classicScores">
+                                <td class="cell">{{ score.points }} points</td>
+                                <div *ngFor="let user of score.username">
+                                    <td class="cell">{{ user }}</td>
+                                </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="LOG2990" class="tab-panel">
+                    <h1>Scores LOG2990</h1>
+                    <table class="tableContent">
+                        <thead>
+                            <tr class="header">
+                                <th class="cell">Points</th>
+                                <th class="cell">Nom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row" *ngFor="let score of log2990Scores">
+                                <td class="cell">{{ score.points }} points</td>
+                                <div *ngFor="let user of score.username">
+                                    <td class="cell">{{ user }}</td>
+                                </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </body>
+</div>

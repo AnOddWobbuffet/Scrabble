@@ -1,0 +1,330 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$red: #d84e43;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+$c: #28f2b3;
+
+body {
+    background: linear-gradient(
+        90.9deg,
+        rgba(255, 187, 187, 1) -8.8%,
+        rgba(255, 220, 177, 1) 12.4%,
+        rgba(255, 249, 177, 1) 35.6%,
+        rgba(220, 255, 177, 1) 59.6%,
+        rgba(177, 218, 255, 1) 84%,
+        rgba(222, 177, 255, 1) 107.9%
+    );
+    // font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    height: auto;
+}
+
+.mhBox {
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    overflow: auto;
+}
+
+.mh {
+    margin: auto;
+    text-align: left;
+    width: 750px;
+    padding-bottom: 10px;
+}
+
+.title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    text-decoration: underline;
+}
+
+#histo {
+    margin-top: -30px;
+}
+
+.history {
+    border-radius: 5px;
+    border: $secondary solid;
+    &:hover {
+        background-color: $secondary;
+        cursor: pointer;
+        color: $gray1;
+    }
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 5px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #666;
+    // border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 15px;
+    // font-size: 0.8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+
+.add {
+    margin-top: 10px;
+}
+
+.space {
+    margin-right: 10px;
+}
+
+.left {
+    flex: 0 1 20%;
+    margin-left: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    flex: 0 1 20%;
+    margin-right: 15px;
+}
+
+.add {
+    font-size: 20px;
+    color: $gray1;
+    margin-left: auto;
+    border: none;
+    border-radius: 5px;
+    background: $secondary;
+    &:hover {
+        box-shadow: 0 0px 20px $secondary;
+        cursor: pointer;
+    }
+    padding: 10px;
+}
+
+.download {
+    width: 250px;
+    height: 70px;
+    margin: auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 20px;
+    border: 3px solid $secondary;
+    line-height: 64px;
+    background: none;
+    white-space: nowrap;
+    overflow: hidden;
+
+    border-radius: (70px);
+    outline: none;
+    &:hover {
+        cursor: pointer;
+        box-shadow: (0 0 5px $primary);
+    }
+}
+
+.reset button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    background-color: $gray1;
+    color: $gray3;
+    &:hover {
+        color: $gray1;
+        background-color: $red;
+        box-shadow: 0 0px 20px $red;
+        cursor: pointer;
+    }
+}
+
+.reset {
+    padding-bottom: 50px;
+}
+
+#text-game {
+    padding-top: 5%;
+    color: $gray1;
+    font-size: 4em;
+    font-weight: 1000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 5%;
+    &:hover {
+        cursor: pointer;
+        transform: rotateX(35deg), translateY(-50%);
+        span {
+            background: $secondary;
+            box-shadow: 0 0px 20px $secondary;
+            &:nth-child(odd) {
+                transform: skewY(15deg);
+            }
+            &:nth-child(even) {
+                transform: skewY(-15deg);
+            }
+        }
+    }
+
+    > span {
+        display: block;
+        background: $gray3;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+        &:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+        &:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+    }
+}
+
+.download:focus {
+    width: 250px;
+    height: 70px;
+    margin: auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 20px;
+    border: 3px solid $secondary;
+    line-height: 64px;
+    background: none;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: (0 0 5px #222);
+    border-radius: (70px);
+    animation: (over 6s 1);
+    outline: none;
+
+    &:before,
+    :focus {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        background: $secondary;
+        animation: (load 6s 1);
+    }
+
+    &:after,
+    :focus {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-bottom: 3px solid;
+        border-right: 3px solid;
+        transform: rotate(45deg) translateY(-6px) translateX(-2px);
+        box-shadow: 3px 3px #333, 6px 6px $secondary;
+        right: 45px;
+        top: 18px;
+        animation: (dwd 6s 1);
+    }
+}
+
+@keyframes over {
+    0%,
+    20% {
+        line-height: 64px;
+        width: 250px;
+    }
+    25%,
+    100% {
+        line-height: 150px;
+        border-color: $secondary;
+    }
+    30%,
+    100% {
+        width: 70px;
+        border-color: #444;
+    }
+}
+
+@keyframes load {
+    0%,
+    40% {
+        height: 0;
+    }
+    90%,
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes dwd {
+    0%,
+    20% {
+        right: 45px;
+        top: 18px;
+    }
+    30%,
+    100% {
+        right: 25px;
+    }
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80% {
+        top: 14px;
+    }
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85% {
+        top: 22px;
+    }
+    54% {
+        color: $secondary;
+        box-shadow: 3px 3px #333, 6px 6px $secondary;
+    }
+    55%,
+    85% {
+        color: #333;
+        box-shadow: 3px 3px $secondary, 6px 6px #333;
+        border-width: 3px;
+        height: 15px;
+    }
+    90%,
+    100% {
+        box-shadow: 1px 1px #333;
+        border-width: 5px;
+        height: 25px;
+        color: #fff;
+    }
+}

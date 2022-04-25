@@ -1,0 +1,7 @@
+<div id="box">
+    <button id="quit" (click)="quit()">Annuler</button>
+    <div id="denialMessage">
+        <div>{{ failMessage }}</div>
+        <div *ngIf="failMessage !== ''">Retour automatique dans 10 secondes</div>
+    </div>
+</div>

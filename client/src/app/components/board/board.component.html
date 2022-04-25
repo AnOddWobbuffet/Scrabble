@@ -1,0 +1,14 @@
+<div id="container">
+    <div id="columnNumbers" class="neon" [style.width.px]="size" [style.font-size.px]="size / 25">
+        <div *ngFor="let n of columnNumbers" class="number">{{ n }}</div>
+    </div>
+    <div id="row-board-container">
+        <div id="rowLetters" [style.height.px]="size" [style.font-size.px]="size / 25" [style.margin-top.px]="size / 110">
+            <div *ngFor="let l of rowLetters" class="letter" [style.height.px]="size / 15">{{ l }}</div>
+        </div>
+        <div class="canvasBox" [style.width.px]="size" [style.height.px]="size">
+            <canvas #boardCanvas (click)="handleClick($event)"> </canvas>
+        </div>
+    </div>
+</div>
+<button id="play" class="threeD" [disabled]="wordPlaced.length === 0" (click)="confirmWord()">Jouer</button>

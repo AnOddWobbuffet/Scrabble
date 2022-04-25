@@ -1,0 +1,50 @@
+<div id="joinBox">
+    <div id="head">
+        <div id="headText">Rejoindre une partie multijoueur</div>
+        <div class="divider"></div>
+        <button id="headButton" (click)="onClose()"><img /><img id="headButtonIcon" src="assets/img/x.png" /></button>
+    </div>
+    <body>
+        <div class="divider"></div>
+        <div id="content">
+            <div id="flexBox">
+                <div id="bodyText">Choisir la salle de jeu</div>
+                <button id="refreshButton" class="threeD" (click)="requestRoomList()">Rafraîchir</button>
+            </div>
+            <div id="forLoop" *ngFor="let room of roomList">
+                <button *ngIf="room.mode === communicationService.mode" class="joinButton" routerLink="/guestWaiting" (click)="joinRoom(room)">
+                    <div class="roomName">{{ room.room }}</div>
+                    <div class="roomSetting">
+                        <div>Hôte: {{ room.name }}</div>
+                        <div>Temps par tour: {{ room.time }} secondes</div>
+                        <div>Dictionnaire utilisé: {{ room.dict?.title }}</div>
+                        <div>Description: {{ room.dict?.description }}</div>
+                    </div>
+                </button>
+            </div>
+            <div class="buttonJoin">
+                <button
+                    *ngIf="classicList.length !== 0 && communicationService.mode === 'classique'"
+                    [disabled]="classicList.length === 1"
+                    class="joinRandomButton"
+                    class="threeD"
+                    routerLink="/guestWaiting"
+                    (click)="joinRandomRoom(classicList)"
+                >
+                    Placement aléatoire
+                </button>
+                <button
+                    *ngIf="log2990List.length !== 0 && communicationService.mode === 'LOG2990'"
+                    [disabled]="log2990List.length === 1"
+                    class="joinRandomButton"
+                    class="threeD"
+                    routerLink="/guestWaiting"
+                    (click)="joinRandomRoom(log2990List)"
+                >
+                    Placement aléatoire
+                </button>
+            </div>
+            <div id="foot"></div>
+        </div>
+    </body>
+</div>

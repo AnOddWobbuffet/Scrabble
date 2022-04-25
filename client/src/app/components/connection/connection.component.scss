@@ -1,0 +1,122 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$red: #d84e43;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+
+#connectBox {
+    margin: -0px;
+}
+
+body {
+    vertical-align: middle;
+}
+.divider {
+    width: 15px;
+    height: auto;
+}
+
+.separator2 {
+    height: 20px;
+}
+#head {
+    height: auto;
+    background: $primary;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+}
+.custom-dialog-container {
+    border-radius: 5px;
+}
+#headText {
+    width: auto;
+    min-width: 700px;
+    margin: 15px;
+    font-weight: 1000;
+    font-size: 50px;
+    margin-bottom: 0px;
+    color: $gray3;
+}
+#bodyText {
+    margin: 15px;
+    font-weight: 1000;
+    font-size: 40px;
+    margin-bottom: 0px;
+    color: $gray3;
+    width: auto;
+    margin-top: 7%;
+}
+#headButton {
+    width: 50px;
+    margin-left: auto;
+    border: none;
+    border-radius: 5px;
+    background: $red;
+    &:hover {
+        box-shadow: 0 0px 20px $red;
+        cursor: pointer;
+    }
+}
+#headButtonIcon {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+#inputField {
+    padding: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 68px;
+    font-size: 40px;
+    font-weight: 1000;
+    color: $gray3;
+}
+input[type='text']:focus {
+    outline: 2px solid $primary;
+}
+#input {
+    position: relative;
+    top: 50%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+#button {
+    height: 78px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: 1000;
+}
+#button:enabled {
+    background-color: $secondary;
+    color: $gray1;
+    &:hover {
+        box-shadow: 0 0px 20px $secondary;
+        cursor: pointer;
+    }
+}
+
+#button:disabled {
+    background-color: $gray2;
+}
+
+#errorMessage {
+    margin-top: 5px;
+    margin-left: 15px;
+    font-weight: 1000;
+    font-size: 25px;
+    margin-bottom: 0px;
+    color: $red;
+    width: auto;
+}

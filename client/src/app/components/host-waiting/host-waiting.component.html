@@ -1,0 +1,18 @@
+<div id="flex">
+    <div id="joinRequest" *ngFor="let user of waitingList">
+        <div class="divider"></div>
+        <p>{{ user.name }} veut rejoindre la partie</p>
+        <div class="divider"></div>
+        <button id="button" class="acceptPlayer" (click)="acceptRequest(user)">Accepter</button>
+        <button id="button" class="refusePlayer" (click)="deleteRequest(user)">Refuser</button>
+        <div class="divider"></div>
+    </div>
+    <div>
+        <button class="buttonPage" id="delete" routerLink="/classic_mode" (click)="deleteRoom()">Annuler</button>
+        <div>
+            <button class="buttonPage" id="solo" [disabled]="waitingList.length !== 0" routerLink="/classic_mode" (click)="convertToSolo()">
+                Changer en solo
+            </button>
+        </div>
+    </div>
+</div>

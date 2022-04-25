@@ -1,0 +1,30 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$red: #d84e43;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+
+#box {
+    justify-content: center;
+    text-align: center;
+}
+#denialMessage {
+    color: $gray3;
+}
+
+#quit {
+    color: $gray1;
+    background: $red;
+    font-weight: 500;
+    font-size: 20px;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    margin: 5%;
+    &:hover {
+        box-shadow: 0 0px 20px $red;
+    }
+}

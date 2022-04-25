@@ -1,0 +1,20 @@
+<body>
+    <div class="container">
+        <div class="information-container">
+            <app-info-panel #info></app-info-panel>
+        </div>
+        <div class="play-area-container">
+            <div id="resize">
+                <button (click)="increment(false)" id="smaller" class="threeD">-</button>
+                <label class="before">Aa</label>
+                <button (click)="increment(true)" id="bigger" class="threeD">+</button>
+                <label class="after">Aa</label>
+            </div>
+            <app-board #board [rackComp]="rack" [infoPanel]="info" id="board" (click)="boardClick()" tabindex="-1"></app-board>
+            <app-rack id="rack" #rack [boardComp]="board" (click)="rackClick()" tabindex="-1"></app-rack>
+        </div>
+        <div class="chat-box-container">
+            <app-chat></app-chat>
+        </div>
+    </div>
+</body>

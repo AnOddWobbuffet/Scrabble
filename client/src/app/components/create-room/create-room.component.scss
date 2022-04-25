@@ -1,0 +1,216 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$red: #d84e43;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+body {
+    vertical-align: middle;
+}
+
+.divider {
+    width: 15px;
+    height: auto;
+}
+
+.separator {
+    height: 30px;
+}
+
+.separator2 {
+    height: 20px;
+}
+
+#head {
+    height: auto;
+    background: $primary;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50px;
+    display: flex;
+    flex-flow: row;
+}
+
+#headText {
+    width: 700px;
+    min-width: 700px;
+    margin: 15px;
+    font-weight: 1000;
+    font-size: 50px;
+    margin-bottom: 0px;
+    color: $gray3;
+}
+#bodyText {
+    margin: 15px;
+    margin-bottom: 0px;
+    color: $gray3;
+    width: auto;
+    font-size: 40px;
+    font-weight: 1000;
+}
+#aiText {
+    margin: 15px;
+    margin-bottom: 0px;
+    color: $gray3;
+    width: auto;
+}
+
+#headButton {
+    width: 50px;
+    margin-left: auto;
+    border: none;
+    border-radius: 5px;
+    background: $red;
+    &:hover {
+        box-shadow: 0 0px 20px $red;
+        cursor: pointer;
+    }
+}
+
+#headButtonIcon {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+#inputField {
+    padding: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    height: 68px;
+    font-size: 40px;
+    font-weight: 1000;
+    color: $gray3;
+}
+
+#input {
+    position: relative;
+    top: 50%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+input[type='text']:focus {
+    outline: 2px solid $primary;
+}
+
+#button {
+    height: 78px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+#button:enabled {
+    background-color: $secondary;
+    color: $gray1;
+    &:hover {
+        box-shadow: 0 0px 20px $secondary;
+        cursor: pointer;
+    }
+}
+
+#button:disabled {
+    background-color: $gray2;
+}
+
+#errorMessage {
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-weight: 1000;
+    font-size: 25px;
+    margin-bottom: 0px;
+    color: $red;
+    width: auto;
+}
+
+#timer {
+    color: $gray3;
+    background: $gray1;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerText {
+    margin: 0;
+}
+
+.timerButton {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    border: none;
+    color: $gray1;
+    background-color: $secondary;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+        position: relative;
+        box-shadow: 0 0px 20px $secondary;
+    }
+}
+
+select {
+    color: $gray3;
+    width: auto;
+    background-color: $gray1;
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    &:hover {
+        cursor: pointer;
+    }
+}
+select option {
+    font-size: 30px;
+    font-weight: 700;
+    background: $gray1;
+}
+
+.options {
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+.detailsText {
+    margin-left: 15px;
+    color: $gray3;
+    width: auto;
+    margin-top: 20px;
+}
+select:focus {
+    outline: none;
+}
+
+#desc {
+    margin: 10px 10px;
+    font-size: 20px;
+}
+
+#roomName {
+    padding: 5px;
+    font-size: 40px;
+    font-weight: 1000;
+    color: $gray3;
+    width: 100%;
+}
+
+#difficultyOption {
+    padding-top: 35px;
+}

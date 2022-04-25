@@ -1,0 +1,21 @@
+<h1 *ngIf="action === 'Update'">Modifier le dictionnaire suivant: {{ localData.title }}</h1>
+<h1 *ngIf="action === 'Add'">Ajouter un nouveau dictionnaire</h1>
+<div>
+    <span *ngIf="action === 'Update'">
+        Titre:
+        <input type="text" [(ngModel)]="formTitle" (keydown.enter)="doAction()" />
+    </span>
+</div>
+<div>
+    <span *ngIf="action === 'Update'">
+        Description:
+        <input *ngIf="action === 'Update'" type="text" [(ngModel)]="formDesc" (keydown.enter)="doAction()" />
+    </span>
+</div>
+<input id="jsonfileinput" *ngIf="action === 'Add'" type="file" accept="application/JSON" (change)="uploadFile($event)" />
+<div class="invalid" *ngIf="invalidDict.length > 0">
+    Erreur:
+    <div class="invalid" *ngFor="let msg of invalidDict">{{ msg }}</div>
+</div>
+<button (click)="doAction()">Confirmer</button>
+<button (click)="closeDialog()">Annuler</button>

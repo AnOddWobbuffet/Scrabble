@@ -1,0 +1,288 @@
+$red: #d84e43;
+$gray1: #f1f1f1;
+#infoPanel {
+    font-size: 20px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+#ourInfo {
+    border-radius: 5px;
+    height: auto;
+    padding: 5px;
+    margin-top: 30%;
+    text-align: center;
+}
+#ourName {
+    border-radius: 5px;
+    padding: 10px;
+    background: $gray1;
+    text-align: center;
+}
+#oppInfo {
+    border-radius: 5px;
+    height: auto;
+    padding: 5px;
+    margin-top: 5%;
+    text-align: center;
+}
+#oppName {
+    border-radius: 5px;
+    background: $gray1;
+    padding: 10px;
+    text-align: center;
+}
+#otherInfo {
+    margin-top: 10%;
+    position: relative;
+}
+#objectivesContainer {
+    margin-top: 5%;
+}
+.timer {
+    border-radius: 5px;
+    height: auto;
+    padding: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+@keyframes blinkR {
+    0% {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    100% {
+        -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 0, 0, 0.8);
+        box-shadow: 0px 0px 4px 5px rgba(255, 0, 0, 0.8);
+    }
+}
+.blinkR {
+    animation: blinkR 0.9s linear infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+@keyframes blinkY {
+    0% {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    100% {
+        -webkit-box-shadow: 0px 0px 5px 2px yellow;
+        box-shadow: 0px 0px 4px 5px yellow;
+    }
+}
+.blinkY {
+    animation: blinkY 0.9s linear infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+@keyframes blinkG {
+    0% {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    100% {
+        -webkit-box-shadow: 0px 0px 5px 2px green;
+        box-shadow: 0px 0px 4px 5px green;
+    }
+}
+.blinkG {
+    animation: blinkG 0.9s linear infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+input[type='checkbox'] {
+    display: none;
+}
+
+.wrap-collabsible1 {
+    margin-top: 5%;
+}
+.lbl-toggle1 {
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    color: #455a64;
+    background: #78909c;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+.lbl-toggle1:hover {
+    color: #2a383d;
+}
+.lbl-toggle1::before {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
+}
+.collapsible-content1 .content-inner1 {
+    background: #b0bec5;
+    border-bottom: 1px solid #90a4ae;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 0.5rem 1rem;
+}
+.toggle1:checked + .lbl-toggle1 + .collapsible-content1 {
+    max-height: 100vh;
+}
+.toggle1:checked + .lbl-toggle1::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+.toggle1:checked + .lbl-toggle1 {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.collapsible-content1 {
+    max-height: 0px;
+    overflow: auto;
+    transition: max-height 0.25s ease-in-out;
+}
+// 2
+.wrap-collabsible2 {
+    margin-top: 5%;
+}
+.lbl-toggle2 {
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    color: #455a64;
+    background: #78909c;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+.lbl-toggle2:hover {
+    color: #2a383d;
+}
+.lbl-toggle2::before {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
+}
+.collapsible-content2 .content-inner2 {
+    background: #b0bec5;
+    border-bottom: 1px solid #90a4ae;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 0.5rem 1rem;
+}
+.toggle2:checked + .lbl-toggle2 + .collapsible-content2 {
+    max-height: 100vh;
+}
+.toggle2:checked + .lbl-toggle2::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+.toggle2:checked + .lbl-toggle2 {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.collapsible-content2 {
+    max-height: 0px;
+    overflow: auto;
+    transition: max-height 0.25s ease-in-out;
+}
+// 3
+.wrap-collabsible3 {
+    margin-top: 5%;
+}
+.lbl-toggle3 {
+    display: block;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    color: #455a64;
+    background: #78909c;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.25s ease-out;
+}
+.lbl-toggle3:hover {
+    color: #2a383d;
+}
+.lbl-toggle3::before {
+    content: ' ';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid currentColor;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
+}
+.collapsible-content3 .content-inner3 {
+    background: #b0bec5;
+    border-bottom: 1px solid #90a4ae;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    padding: 0.5rem 1rem;
+}
+.toggle3:checked + .lbl-toggle3 + .collapsible-content3 {
+    max-height: 100vh;
+}
+.toggle3:checked + .lbl-toggle3::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+.toggle3:checked + .lbl-toggle3 {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.collapsible-content3 {
+    max-height: 0px;
+    overflow: auto;
+    transition: max-height 0.25s ease-in-out;
+}
+
+#returnIcon {
+    height: 60px;
+    transform: rotateY(180deg);
+}
+
+#returnButton {
+    background-color: transparent;
+    border: none;
+    img:last-child {
+        display: none;
+    }
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        img:last-child {
+            display: block;
+        }
+        img:first-child {
+            display: none;
+        }
+    }
+}
+
+#return {
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+}

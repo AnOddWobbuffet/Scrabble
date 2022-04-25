@@ -1,0 +1,57 @@
+<body>
+    <div id="text-game">
+        <span>S</span>
+        <span>C</span>
+        <span>R</span>
+        <span>A</span>
+        <span>B</span>
+        <span>B</span>
+        <span>L</span>
+        <span>E</span>
+    </div>
+    <div id="container">
+        <div class="buttonContainer">
+            <button
+                class="button"
+                id="classic"
+                (click)="onClick('classique')"
+                matTooltip="Version originale du jeu Scrabble"
+                [matTooltipPosition]="'right'"
+                matTooltipClass="tooltip"
+            >
+                Mode Classique
+            </button>
+        </div>
+        <div class="buttonContainer">
+            <button
+                class="button"
+                (click)="onClick('LOG2990')"
+                matTooltip="Version du jeu avec des objectifs supplémentaires"
+                [matTooltipPosition]="'right'"
+                matTooltipClass="tooltip"
+            >
+                Mode LOG2990
+            </button>
+        </div>
+        <div class="buttonContainer">
+            <button
+                class="button"
+                (click)="onScores()"
+                class="button"
+                matTooltip="Meilleurs scores des joueurs selon différents modes"
+                [matTooltipPosition]="'right'"
+                matTooltipClass="tooltip"
+            >
+                Meilleurs scores
+            </button>
+        </div>
+
+        <div class="footer-item">
+            <h4 class="team-name">Équipe 214</h4>
+            <p>
+                <span>Andy Chen</span>, <span>Laurent Langlois</span>, <span>Olivier Lu</span>, <span>Lucy Nguyen</span>,
+                <span>Chu Xiang Su</span>
+            </p>
+        </div>
+    </div>
+</body>

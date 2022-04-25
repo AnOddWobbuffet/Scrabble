@@ -1,0 +1,17 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+body {
+    background-color: $gray1;
+}
+#container {
+    display: inline-block;
+    margin: 5%;
+    border-radius: 5px;
+    height: 80%;
+    width: 90%;
+    background: $gray2;
+    overflow-y: hidden;
+}

@@ -1,0 +1,59 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$red: #d84e43;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+
+#flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#joinRequest {
+    color: $gray3;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 2vh;
+    margin-right: 30%;
+    margin-left: 30%;
+    background: $gray1;
+    box-shadow: 0 0px 20px $primary;
+}
+.divider {
+    height: 2vh;
+}
+#button {
+    width: 100px;
+    background: $gray2;
+    font-weight: 500;
+    font-size: 20px;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+    &:hover {
+        color: $gray1;
+        background: $primary;
+        box-shadow: 0 0px 20px $primary;
+    }
+}
+
+.buttonPage {
+    color: $gray1;
+    background: $red;
+    font-weight: 500;
+    font-size: 20px;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    margin: 5%;
+    &:hover {
+        box-shadow: 0 0px 20px $red;
+    }
+}

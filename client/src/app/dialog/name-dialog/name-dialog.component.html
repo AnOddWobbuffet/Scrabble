@@ -1,0 +1,9 @@
+<h1 *ngIf="action === 'Update'">Modifier le nom suivant: {{ localData.name }}</h1>
+<h1 *ngIf="action === 'Add'">Ajouter un nom pour le JV {{ localData.difficulty }}</h1>
+<span>
+    Nom:
+    <input type="text" [(ngModel)]="formName" (keydown.enter)="doAction()" />
+</span>
+<div class="invalid" *ngIf="invalidName">Erreur: {{ invalidName }}</div>
+<button (click)="doAction()">Confirmer</button>
+<button (click)="closeDialog()">Annuler</button>

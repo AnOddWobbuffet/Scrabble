@@ -1,0 +1,68 @@
+<div id="createRoomBox">
+    <div id="head">
+        <div id="headText">Créer une partie {{ communication.gameMode }}</div>
+        <div class="divider"></div>
+        <button id="headButton" (click)="onClose()"><img /><img id="headButtonIcon" src="assets/img/x.png" /></button>
+    </div>
+    <body>
+        <div class="separator"></div>
+        <div id="bodyText" *ngIf="communication.gameMode === 'multijoueur'">Nom de la salle</div>
+        <div class="separator2"></div>
+        <div id="input" *ngIf="communication.gameMode === 'solo'">
+            <div class="divider"></div>
+            <div id="roomName">{{ roomName }} | Joueur virtuel: {{ aiName }}</div>
+            <div class="divider"></div>
+            <button id="button" (click)="createRoom()">Créer</button>
+            <div class="divider"></div>
+        </div>
+        <div id="input" *ngIf="communication.gameMode === 'multijoueur'">
+            <div class="divider"></div>
+            <input
+                id="inputField"
+                type="text"
+                [(ngModel)]="roomName"
+                name="roomName"
+                (keydown.enter)="createRoom()"
+                placeholder="Aa"
+                maxlength="64"
+                autofocus
+            />
+            <div class="divider"></div>
+            <button id="button" [disabled]="!roomName" (click)="createRoom()">Créer</button>
+            <div class="divider"></div>
+        </div>
+        <div id="errorMessage">{{ errorMessage }}</div>
+
+        <div class="options">
+            <div class="detailsText" id="timerTitle">Temps par tour</div>
+            <div id="input">
+                <div class="divider"></div>
+                <button class="timerButton" id="timerMinus" (click)="reduceTime()">−</button>
+                <div id="timer">
+                    <p id="timerText">{{ roomTime }} secondes</p>
+                </div>
+                <button class="timerButton" id="timerPlus" (click)="gainTime()">+</button>
+            </div>
+        </div>
+
+        <div class="options">
+            <div class="detailsText">
+                Dictionnaire :
+                <select [(ngModel)]="selectedDict">
+                    <option *ngFor="let dict of dictionnaries" [ngValue]="dict" selected>{{ dict.title }}</option>
+                </select>
+                <div id="desc">{{ selectedDict.description }}</div>
+            </div>
+        </div>
+
+        <div class="options" *ngIf="communication.gameMode === 'solo'">
+            <div class="detailsText" id="difficultyOption">
+                Difficulté :
+                <select [(ngModel)]="aiDifficulty" (change)="aiNames()">
+                    <option value="novice" selected>Novice</option>
+                    <option value="expert">Expert</option>
+                </select>
+            </div>
+        </div>
+    </body>
+</div>

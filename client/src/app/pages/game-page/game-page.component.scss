@@ -1,0 +1,115 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.play-area-container {
+    text-align: center;
+    overflow: auto;
+    // flex: 1 1 auto;
+}
+.chat-box-container {
+    border-radius: 10px;
+    flex: 0 1 20%;
+    min-width: 200px;
+    margin: 20px;
+}
+#rack {
+    outline: none !important;
+}
+#board {
+    outline: none !important;
+}
+#bgImg {
+    z-index: -10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 120vh;
+}
+
+body {
+    background: #becccc;
+}
+
+#forfeitButton {
+    height: 20px;
+    background-color: red;
+}
+
+.information-container {
+    border-radius: 10px;
+    flex: 0 1 20%;
+    min-width: 200px;
+    margin: 20px;
+}
+
+#resize {
+    margin-top: 2%;
+    margin-left: 8%;
+}
+
+#smaller {
+    text-align: center;
+}
+
+#bigger {
+    margin-left: 40px;
+}
+
+.before {
+    font-size: small;
+    margin-left: 10px;
+}
+
+.middle {
+    font-size: large;
+}
+
+.after {
+    font-size: x-large;
+    margin-left: 10px;
+}
+
+button,
+.button,
+input[type='button'] {
+    background-color: #f4f4f4;
+    background-image: -webkit-linear-gradient(90deg, hsla(0, 0%, 0%, 0.05), hsla(0, 0%, 0%, 0.01));
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.25), 0 1px 2px hsla(0, 0%, 0%, 0.5);
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    transition: 0.1s;
+}
+button:hover,
+.button:hover,
+input[type='button']:hover {
+    background-image: -webkit-linear-gradient(90deg, hsla(0, 0%, 0%, 0.08), hsla(0, 0%, 0%, 0.03));
+}
+button:active,
+.button:active,
+input[type='button']:active {
+    background-image: -webkit-linear-gradient(90deg, hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 0%, 0.12));
+    color: #333;
+    text-shadow: 0 1px 0 hsla(0, 0%, 100%, 0.25);
+}
+button.threeD,
+.button .threeD,
+input[type='button'].threeD {
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.25), inset 0 -4px 0 hsla(0, 0%, 0%, 0.15), 0 1px 2px hsla(0, 0%, 0%, 0.5);
+    height: 27px;
+    padding-bottom: 4px;
+}
+button.threeD:active,
+.button .threeD:active,
+input[type='button'].threeD:active {
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.25), inset 0 -2px 0 hsla(0, 0%, 0%, 0.3), 0 1px 2px hsla(0, 0%, 0%, 0.75);
+    position: relative;
+    top: 1px;
+    // height: 51px;
+}

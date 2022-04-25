@@ -1,0 +1,52 @@
+$primary: #2ba245;
+$secondary: #1aad19;
+$red: #d84e43;
+$gray1: #f1f1f1;
+$gray2: #acacac;
+$gray3: #4d4d4d;
+
+#text {
+    font-size: 40px;
+    font-weight: 1000;
+    color: $gray3;
+    text-align: center;
+    padding: 30px;
+}
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+.divider {
+    width: 50px;
+}
+button {
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: 1000;
+    background-color: $gray2;
+    color: $gray1;
+    justify-content: center;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+#accept {
+    &:hover {
+        box-shadow: 0 0px 20px $red;
+        background: $red;
+        cursor: pointer;
+    }
+}
+
+#refuse {
+    &:hover {
+        box-shadow: 0 0px 20px $secondary;
+        background: $secondary;
+        cursor: pointer;
+    }
+}
+#separator {
+    height: 30%;
+}

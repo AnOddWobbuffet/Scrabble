@@ -1,0 +1,65 @@
+<div id="infoPanel">
+    <div id="ourInfo" [ngStyle]="{ 'background-color': currentPlayer === name ? '#1aad19' : '#acacac' }">
+        <p id="ourName">{{ name }}</p>
+        <p>{{ points }}</p>
+    </div>
+    <div id="oppInfo" [ngStyle]="{ 'background-color': currentPlayer === opponentName ? '#1aad19' : '#acacac' }">
+        <p id="oppName">{{ opponentName }}</p>
+        <p>{{ opponentPoints }}</p>
+    </div>
+    <div id="otherInfo">
+        <p>Lettres restantes: {{ remainingLetters }}</p>
+        <div class="timer" [ngClass]="{ blinkG: timeLeft > 20, blinkY: timeLeft <= 20 && timeLeft > 10, blinkR: timeLeft <= 10 }">{{ timeLeft }}</div>
+        <p *ngIf="showRackLetters">Tu possèdes {{ currentLetters }} lettres</p>
+        <p *ngIf="opponentLetters">Ton adversaire possède {{ opponentLetters }} lettres</p>
+        <p *ngIf="isGameOver">Fin de la partie</p>
+        <p *ngIf="winner">Le gagnant est {{ winner }}</p>
+        <div *ngIf="communication.mode === 'LOG2990'" id="objectivesContainer">
+            <div class="wrap-collabsible1">
+                <input id="collapsible1" class="toggle1" type="checkbox" />
+                <label for="collapsible1" class="lbl-toggle1">Objectifs privés</label>
+                <div class="collapsible-content1">
+                    <p *ngIf="privateObjective" id="private-objective" class="content-inner1">
+                        {{ privateObjectivePoints }} points : {{ privateObjective }}
+                    </p>
+                </div>
+            </div>
+            <div class="wrap-collabsible2">
+                <input id="collapsible2" class="toggle2" type="checkbox" />
+                <label for="collapsible2" class="lbl-toggle2">Objectifs publics</label>
+                <div class="collapsible-content2">
+                    <p *ngFor="let objective of publicObjectives; let i = index" id="public-objective" class="content-inner2">
+                        {{ publicObjectivesPoints[i] }} points : {{ objective }}
+                    </p>
+                </div>
+            </div>
+            <div class="wrap-collabsible3">
+                <input id="collapsible3" class="toggle3" type="checkbox" />
+                <label for="collapsible3" class="lbl-toggle3">Objectifs complétés</label>
+                <div class="collapsible-content3">
+                    <p *ngFor="let objective of completedObjectives; let i = index" id="completed-objective" class="content-inner3">
+                        {{ objective }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button id="skip" (click)="skipTurn()" [disabled]="isDisabled">Passer mon tour</button> -->
+    <div id="return">
+        <button id="returnButton" (click)="abandon()">
+            <img id="returnIcon" src="assets/img/backGray.png" />
+            <img id="returnIcon" src="assets/img/backRed.png" />
+        </button>
+    </div>
+    <!-- <div *ngIf="!this.abandonConfirmed" class="buttonsContent">
+        <button id="forfeitButton" *ngIf="this.abandonRequest" (click)="this.abandonRequest = false">Abandonner</button>
+        <div *ngIf="!this.abandonRequest">
+            <p>Êtes-vous sûr?</p>
+            <button id="abandon" (click)="abandon()">Oui</button>
+            <button id="cancelAbandon" (click)="this.abandonRequest = true">Non</button>
+        </div>
+    </div> -->
+    <div *ngIf="this.abandonConfirmed">
+        <button id="quitButton" class="threeD" (click)="returnToMenu()">Quitter la partie</button>
+    </div>
+</div>

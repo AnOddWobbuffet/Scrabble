@@ -1,0 +1,18 @@
+<div class="chatBox">
+    <div class="head"></div>
+    <div id="messageBox" #scroll [scrollTop]="scroll.scrollHeight">
+        <div *ngFor="let message of serverMessages" class="messages">
+            <div *ngIf="message.title === 'System'" class="systemMessage">{{ message.body }}</div>
+            <div *ngIf="message.title === socketId" class="myMessage">{{ message.body }}</div>
+            <div *ngIf="message.title !== socketId && message.title !== 'System'" class="otherMessage">{{ message.body }}</div>
+        </div>
+    </div>
+    <div class="chatInput">
+        <div class="divider"></div>
+        <input id="chatInputField" [(ngModel)]="message" (keydown.enter)="sendMessage()" type="text" placeholder="Aa" autofocus autocomplete="off" />
+        <div class="divider"></div>
+        <button id="chatSubmitButton" (click)="sendMessage()"><img id="chatSubmitIcon" src="assets/img/arrow.png" /></button>
+        <div class="divider"></div>
+    </div>
+    <div class="foot"></div>
+</div>

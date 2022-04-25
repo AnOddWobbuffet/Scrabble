@@ -1,0 +1,17 @@
+<div id="rack-container">
+    <!-- <p>Vos lettres</p> -->
+    <div class="flexBox">
+        <button id="skip" class="threeD" (click)="skipTurn()" [disabled]="isDisabled">Passer</button>
+        <div class="canvasBox" [style.width.px]="tileSize * 7" [style.height.px]="tileSize">
+            <canvas #rackCanvas (contextmenu)="mouseDetect($event)" (click)="mouseDetect($event)"></canvas>
+        </div>
+        <!-- <button>Activer clavier pour chevalet</button> -->
+        <div *ngIf="exchangeHighlighted.size !== 0">
+            <button id="swap" class="threeD" [disabled]="isDisabled || remainingLetters < 7" (click)="sendExchange(exchangeHighlighted)">
+                Échanger
+            </button>
+            <!-- <button (click)="cancelExchange(exchangeHighlighted)">Annuler</button> -->
+        </div>
+        <!-- <button id="skip" class="threeD">Jouer</button> -->
+    </div>
+</div>

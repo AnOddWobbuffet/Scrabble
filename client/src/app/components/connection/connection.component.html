@@ -1,0 +1,31 @@
+<div class="custom-dialog-container">
+    <div id="head">
+        <div id="headText">Choisissez votre nom d'utilisateur</div>
+        <div class="divider"></div>
+        <button id="headButton" (click)="onClose()"><img /><img id="headButtonIcon" src="assets/img/x.png" /></button>
+    </div>
+    <body>
+        <div class="separator"></div>
+        <div id="bodyText">Nom d'utilisateur</div>
+        <div class="separator2"></div>
+        <div id="input">
+            <div class="divider"></div>
+            <input
+                id="inputField"
+                type="text"
+                [(ngModel)]="username"
+                name="username"
+                (keydown.enter)="sendUsername()"
+                placeholder="Aa"
+                maxlength="24"
+                autofocus
+                required
+                autocomplete="off"
+            />
+            <div class="divider"></div>
+            <button id="button" [disabled]="!username" (click)="sendUsername()">Choisir</button>
+            <div class="divider"></div>
+        </div>
+        <div id="errorMessage" *ngIf="username === lastUsername">{{ errorMessage }}</div>
+    </body>
+</div>

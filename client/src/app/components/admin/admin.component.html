@@ -1,0 +1,83 @@
+<body>
+    <div id="text-game">
+        <span>A</span>
+        <span>D</span>
+        <span>M</span>
+        <span>I</span>
+        <span>N</span>
+    </div>
+    <div class="title" id="histo">Historique des parties</div>
+    <div class="mhBox">
+        <div class="mh" *ngFor="let match of matchHistory">
+            <div class="history">
+                <div class="left">
+                    <div>Joueur1: {{ match.playerOneName }}</div>
+                    <div>{{ match.playerOnePoints }} Points</div>
+                </div>
+                <div class="center">
+                    <div class="center">{{ match.date | date: 'medium' }}</div>
+                    <div class="center">{{ convertNumberToTime(match.duration) }}</div>
+                    <div>Mode {{ match.mode }}</div>
+                    <div *ngIf="match.abandon">(abandon)</div>
+                    <div *ngIf="match.solo">Solo</div>
+                    <div *ngIf="!match.solo">Multijoueur</div>
+                </div>
+                <div class="right">
+                    <div>Joueur2: {{ match.playerTwoName }}</div>
+                    <div>{{ match.playerTwoPoints }} Points</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="title">Dictionnaires</div>
+    <table class="dict">
+        <tr *ngFor="let dict of dictionnaries; let i = index">
+            <th>
+                <div>Titre: {{ dict.title }}</div>
+                <div>Description: {{ dict.description }}</div>
+            </th>
+            <th>
+                <button class="space" *ngIf="!isDefaultDict(dict)" (click)="openDictDialog('Update', dict)">Modifier</button>
+                <button *ngIf="!isDefaultDict(dict)" (click)="deleteDict(dict.title)">Effacer</button>
+            </th>
+            <th>
+                <button class="download" (click)="downloadRequest(dict.path)">Télécharger</button>
+            </th>
+        </tr>
+    </table>
+    <button class="add" (click)="openDictDialog('Add', { title: '', description: '', words: [] })">Ajouter</button>
+    <div class="title">Noms JV Novice</div>
+    <table class="novice">
+        <tr *ngFor="let name of aiNoviceNames">
+            <th>
+                <div>{{ name.name }}</div>
+            </th>
+            <th>
+                <button class="space" *ngIf="!isDefaultName(name)" (click)="openNameDialog('Update', name)">Modifier</button>
+                <button *ngIf="!isDefaultName(name)" (click)="deleteName(name)">Effacer</button>
+            </th>
+        </tr>
+    </table>
+    <button class="add" (click)="openNameDialog('Add', { name: '', difficulty: 'Novice' })">Ajouter</button>
+    <div class="title">Noms JV Expert</div>
+    <table class="expert">
+        <tr *ngFor="let name of aiExpertNames">
+            <th>
+                <div>{{ name.name }}</div>
+            </th>
+            <th>
+                <button class="space" *ngIf="!isDefaultName(name)" (click)="openNameDialog('Update', name)">Modifier</button>
+                <button *ngIf="!isDefaultName(name)" (click)="deleteName(name)">Effacer</button>
+            </th>
+        </tr>
+    </table>
+    <button class="add" (click)="openNameDialog('Add', { name: '', difficulty: 'Expert' })">Ajouter</button>
+
+    <div class="title">Réinitialisation des bases de données</div>
+    <div class="reset">
+        <button class="space" (click)="reset('MH')">Réinitialiser l'historique des parties</button>
+        <button class="space" (click)="reset('Dict')">Réinitialiser les dictionnaires</button>
+        <button class="space" (click)="reset('Scores')">Réinitialiser les scores</button>
+        <button class="space" (click)="reset('AiNames')">Réinitialiser les noms JV</button>
+    </div>
+</body>
